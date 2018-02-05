@@ -1,3 +1,7 @@
 .side-menu {
   display: none;
 }
+.list {
+  height: 556px;
+  overflow-y: scroll;
+}

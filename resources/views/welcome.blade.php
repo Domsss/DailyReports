@@ -44,40 +44,92 @@
         
         <div class="reports-form mt-5">
           <form action="/" method="post">
-            <div class="ml-5">
-              <div class="col col-lg-4">
-                <div class="form-group">
-                  <div class="card p-4">
-                    <h5 class="card-title">Daily Reports</h5>
-                    <label for="">Date</label>
-                    <div class="input-group mb-3">
-                      <input type="date" class="form-control" disabled/>
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id=""><i class="fa fa-edit"></i></span>
+            <div class="ml-5 mr-5">
+              <div class="clearfix">
+                <div class="col col-lg-4 float-left">
+                  <div class="form-group">
+                    <div class="card p-4">
+                      <h5 class="card-title">Daily Reports</h5>
+                      <label for="">Date</label>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" value="{{date('m/d/Y')}}" disabled/>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id=""><i class="fa fa-edit"></i></span>
+                        </div>
                       </div>
-                    </div>
-                    <label for="">Job Type</label>
-                    <input type="text" class="form-control mb-3">
-                    <label for="">Project Code</label>
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" placeholder="ABC" maxlength="3">
-                      <input type="text" class="form-control" placeholder="123" maxlength="3">
-                      <input type="text" class="form-control" placeholder="4567" maxlength="4">
-                    </div>
-                    <label for="">Project Name</label>
-                    <input type="text" class="form-control mb-3">
-                    <label for="">Time Duration</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="">From</span>
+                      <label for="">Job Type</label>
+                      <select name="" id="" class="form-control mb-3" required/>
+                        <option value=""></option>
+                        <option value="">Coding</option>
+                        <option value="">Quality Assurance</option>
+                        <option value="">Idle</option>
+                        <option value="">Break</option>
+                      </select>
+                      <label for="">Project Code</label>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="ABC" maxlength="3" required/>
+                        <input type="text" class="form-control" placeholder="123" maxlength="3" required/>
+                        <input type="text" class="form-control" placeholder="4567" maxlength="4" required/>
                       </div>
-                      <input type="text" class="form-control">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="">To</span>
+                      <label for="">Project Name</label>
+                      <input type="text" class="form-control mb-3" required/>
+                      <label for="">Time Duration</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="">From</span>
+                        </div>
+                        <input type="text" class="form-control" required/>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="">To</span>
+                        </div>
+                        <input type="text" class="form-control" required>
                       </div>
-                      <input type="text" class="form-control">
+                    <button type="submit" class="btn btn-primary btn-block mt-3" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
                     </div>
-                    <input type="submit" class="btn btn-primary btn-block mt-3" value="Submit">
+                  </div>
+                </div>
+                <div class="col col-lg-8 float-left card p-4 list">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Job Type</th>
+                        <th scope="col">Project Code</th>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Time Duration</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to save ?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                   </div>
                 </div>
               </div>
@@ -85,6 +137,11 @@
           </form>
         </div>
     </div>
+    
+  <!-- Button trigger modal -->
     <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
